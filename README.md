@@ -1,5 +1,6 @@
 # cs-week01-movie
 CoderSchool.vn - VueJs - 1st week assignment
+![](cs-week01-movie.gif)
 
 [x] Store response to a data variable
 
@@ -11,7 +12,7 @@ CoderSchool.vn - VueJs - 1st week assignment
 
 [x] Don't forget to use index and :key attribute when using v-for. Index can be useful for the task about displaying only 15 items in a list
 
-[] For some bonus points, learn about javascript array sorting.
+[ ] For some bonus points, learn about javascript array sorting.
 
 [x] Make list sortable by score (there are buttons for that)
 
