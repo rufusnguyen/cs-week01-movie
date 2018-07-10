@@ -17,12 +17,13 @@
 </template>
 <script>
 import Color from 'color'
-import MovieService from '@/stores/movieService'
+import MovieMixin from '@/mixins/movieMixin'
 
 const VOTING_CONCEPT_COLOR = Color('blue')
 
 export default {
     name: 'Movie',
+    mixins: [MovieMixin],
     data () {
         return {
             movies: null
@@ -30,7 +31,7 @@ export default {
     },
     methods: {
         reloadMovies(sortField) {
-            MovieService.searchMovie(sortField).then((data) => {
+            this.searchMovie(sortField).then((data) => {
                 this.movies = data.results;
                 this.movies.forEach(movie => {
                     movie.color = VOTING_CONCEPT_COLOR.lighten(movie.vote_average);
@@ -40,7 +41,7 @@ export default {
     },
     mounted() {
         if (!this.movies) {
-            MovieService.searchMovie().then((data) => {
+            this.searchMovie().then((data) => {
                 this.movies = data.results;
             });
         }
